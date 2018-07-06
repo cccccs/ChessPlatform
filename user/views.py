@@ -35,3 +35,25 @@ def login(request):
         if request.GET.get('mes'):
             mes = request.GET.get('mes')   
         return render(request,'login.html',{'mes':mes})
+def register(request):
+    if request.method=='POST':
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        if(username==''or password==''):
+             return HttpResponseRedirect('register?mes=请输入账号或密码！')
+        user = TUser()
+        user.username=username
+        user.password=password
+        user.aiWinTime=0
+        user.aiLoseTime=0
+        user.pvpLoseTime=0
+        user.pvpWinTime=0
+        user.articlePic=""
+        user.save()
+        return HttpResponseRedirect('login?mes=注册成功 请登录！')
+    else:
+        mes=""
+        if request.GET.get('mes'):
+            mes = request.GET.get('mes')   
+        return render(request,'register.html',{'mes':mes})

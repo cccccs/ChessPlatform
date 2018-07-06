@@ -15,15 +15,13 @@
 <div id="sky"></div>
 <div id="head"></div>
 <div id="middle">
-<form action="login" method="post">
+<form action="register" method="post">
 <ul style="text-align: center;">
 <li style="font-size: 48px">五子棋游戏对战平台</li>
 {% csrf_token %}    
-<form action="/user/login" method="POST">
 <li><input type="text" class="name" name="username" placeholder="请输入用户名"></li>
 <li><input type="password" name="password" class="pwd" placeholder="请输入密码"></li>
-<li><button type="submit" id="login">立即登录</button></li>
-<li><a href="../user/register">去注册</a></li>
+<li><button type="submit" id="login">立即注册</button></li>
 </form>
 <li><span style="color:red">{{mes}}</span></li>
 			
