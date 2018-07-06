@@ -1,7 +1,7 @@
 # mysite/routing.py
 from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter, URLRouter
-from chat.consumers import ChatConsumer 
+
 from game.consumers import GChatConsumer 
 from game.consumers import GChessConsumer
 from game.consumers import GStatusConsumer  
@@ -12,7 +12,7 @@ application = ProtocolTypeRouter({
     'websocket': AuthMiddlewareStack(
         URLRouter(
             [
-            url(r"^ws/chat/(?P<room_name>[^/]+)/$", ChatConsumer),
+ 
             url(r"^ws/game/pvp/chat/(?P<room_name>[^/]+)/$", GChatConsumer),
             url(r"^ws/game/pvp/chess/(?P<room_name>[^/]+)/$", GChessConsumer),
             url(r"^ws/game/pvp/status/(?P<room_name>[^/]+)/$", GStatusConsumer),
