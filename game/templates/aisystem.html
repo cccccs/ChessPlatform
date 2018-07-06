@@ -1,0 +1,66 @@
+{% extends 'layout.html'%}
+    
+{% block header%}
+{% load staticfiles %}
+<link href="{% static 'css/aisystem.css'%}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block layout%}
+    <div class="container">
+        <div class="left">
+            <div class="opdiv">
+                <p> 对方: <span class="opname">computer</span></p>
+                <br>
+                
+                <P>  总时间: 10:00</p>
+                <br>
+                
+                <p>倒计时: <span class="optime" id="optime">10:00</span></p>
+                <br>
+                
+                <canvas class="opchess" id="opchess" width="45" height="45" ></canvas>
+            </div>
+            <div class="mydiv">
+                    <p>己方：<span class="myname">{{request.session.username}}</span></p>
+                    <br>
+                    <P>总时间: 10:00</p>
+                    <br>
+                    <p>倒计时: <span class="mytime" id="mytime">10:00</span></p>
+                    <br>
+                    <canvas class="mychess" id="mychess"  width="45" height="45" ></canvas>
+            </div>
+    
+        </div>
+
+        <div class="canvas" style="text-align: center;background-color:whitesmoke">
+
+           <canvas id="myCanvas" width="450" height="450" style="align-self: auto;"></canvas> 
+          
+
+           <div class="button1">
+              <div class="start" id="start">
+              开始
+              </div>
+              
+              <div class="fail" id="fail">
+                认输
+              </div>
+            </div>
+        </div>
+    </div>
+    
+       {% load staticfiles %}
+       <script type="text/javascript" src="{% static 'js/drawcanvas.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/myaigo.js'%}"></script>  
+       
+        <script type="text/javascript" src="{% static 'js/Evalue.js'%}"></script>
+       <script type="text/javascript" >
+               
+        $(document).ready(function(){
+            drawchess(); 
+            me=false;
+            
+        });
+        
+        </script> 
+    {% endblock %}
+    

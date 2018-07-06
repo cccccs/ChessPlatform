@@ -1,0 +1,92 @@
+    {% extends 'layout.html'%}
+    
+    {% block header%}
+    {% load staticfiles %}
+    <link href="{% static 'css/pvp.css'%}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+    
+    
+    {% block layout%}
+    <div id="room_name" style="display:none">{{room_name_json}}</div>
+    <div id="session_type" style="display:none">{{request.session.type}}</div>
+    <div id="session_name" style="display: none">{{request.session.username}}</div>
+    <div id="session_opname" style="display: none">{{request.session.opusername}}</div>
+    <div  class="container">
+        <div class="left" >
+                <div class="leftl">
+                        <div class="opdiv">
+                            <p> 对方: <span id="opnameSpan"></span></p>
+                            <br>
+                            
+                            <!-- <P>  总时间: 10:00</p> -->
+                            <br>
+                            
+                            <!-- <p>倒计时: <span class="optime" id="optime">10:00</span></p> -->
+                            <br>
+                            
+                            <canvas class="opchess" id="opchess" width="45" height="45" ></canvas>
+                        </div>
+                        <div class="mydiv">
+                                <p>己方：<span class="myname">{{request.session.username}}</span></p>
+                                <br>
+                                <!-- <P>总时间: 10:00</p> -->
+                                <br>
+                                <!-- <p>倒计时: <span class="mytime" id="mytime">10:00</span></p> -->
+                                <br>
+                                <canvas class="mychess" id="mychess"  width="45" height="45" ></canvas>
+                        </div>
+                
+                </div>
+                    
+                    <div class="canvas" style="text-align: center;background-color:whitesmoke">
+
+                            <canvas id="myCanvas" width="450" height="450" style="align-self: auto;"></canvas> 
+                           
+                            <div id="note" class="note"> </div>
+                            <div class="button1">
+                               <div class="start" id="start">
+                               开始
+                               </div>
+                               
+                               <div class="fail" id="fail">
+                                 认输
+                               </div>
+                               <div class="regret" id="regret">
+                                 退出
+                                 </div>
+                             </div>
+
+                    </div>
+        </div>
+
+        <div class="talk" >
+                <div >
+                        <table border="1">
+                                <tr>
+                                  <td id="myname"style="width:100px; height:30px"></td>
+                                  <td id="mystatus"style="width:100px; height:30px"></td>
+                                </tr>
+                                <tr>
+                                  <td id="opname"style="width:100px; height:30px"></td>
+                                  <td id="opstatus"style="width:100px; height:30px"></td>
+                                </tr>
+                              </table>
+                      
+                </div>
+            <div style="margin-top:100px">
+                <textarea readonly id="chat-log" cols="100" rows="16"></textarea><br/>
+                <input id="chat-message-input" type="text" size="100"/><br/>
+                <input id="chat-message-submit" type="button" value="Send"/>
+            </div>
+        </div>
+    </div>
+       {% load staticfiles %}
+       <script type="text/javascript" src="{% static 'js/pvp.js'%}"></script>
+       <script type="text/javascript" src="{% static 'js/myaigo.js'%}"></script>
+        <script>
+            window.onload=function(){
+                startgame();
+            }
+           
+        </script>
+    {% endblock %}

@@ -1,0 +1,89 @@
+div.container
+{
+width:100%;
+height: auto;
+margin:0px;
+border-bottom:1px solid gray;
+line-height:150%;
+background-color:whitesmoke;
+}
+div.left{
+    float:left;
+    width:200px;
+    height: 100%;
+    margin-left: 50px;
+   
+    padding:1em;
+    text-align: center;
+}
+div.opdiv{
+    margin-top: 50px;
+}
+
+div.canvas{
+    margin-left:300px;
+    height: 100%;
+    border-left:1px solid gray;
+    padding:2em;
+    text-align: center;
+}
+div.button1{
+    margin-top: 20px;
+    align-self: auto;
+    height: 80px;
+    
+}
+div.start{
+    border:2px solid #a1a1a1;
+    background: green;
+    width:15%;
+    border-radius: 10px;
+    color:white;
+    height: 25px;
+    font-size: 1.5em;
+    margin-left:25%;
+    float: left;
+    
+}
+div.fail{
+    border:2px solid #a1a1a1;
+    height: 25px;
+    background: red;
+    width:15%;
+    border-radius: 10px;
+    color:white;
+    font-size: 1.5em;
+    margin-left:25px;
+    float: left;
+    text-align: center;
+}
+div.regret{
+    border:2px solid #a1a1a1;
+    background: white;
+    width:15%;
+    text-align: center;
+    height: 25px;
+    border-radius: 10px;
+    color:black;
+    font-size: 1.5em;
+    margin-left:20px;
+    float: left;
+}
+/* .myCanvas{
+    align-self: auto;
+    width:450px;
+    height:450px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.chessCanvas{
+    align-self: auto;
+    width:450px;
+    height:450px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 
+} */

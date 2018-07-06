@@ -1,0 +1,35 @@
+{% extends 'layout.html'%}
+
+    {% block header%}
+    {% load staticfiles %}
+    {% endblock %}
+
+    {% block layout%}
+
+    <table border="1",style="margin:100px">
+
+        <tr>
+          <th>用户</th>
+          <th>对手</th>
+          <th>结果</th>
+          <th>时间</th>
+        </tr>
+        
+            {% for result in results%}
+          </tr>
+          <td>{{result.userId}}</td>
+          <td>{{result.opuserId}}</td>
+          <td>{{result.result}}</td>
+          <td>{{result.dateCreated}}</td>
+          </tr>
+          {% endfor %}
+        </tr>
+      </table>
+    <!-- <ul>
+        {% for result in results%}
+        <li>
+        {{result.userId}}
+        </li>
+        {% endfor %}
+    </ul> -->
+    {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout.html'%}
+
+    {% block header%}
+    {% load staticfiles %}
+    <link href="{% static 'css/index.css'%}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+
+    {% block layout%}
+    <div class="container">
+        <div class="left">
+        
+        <div class="top">
+            
+            <div class="ai" id="ai">
+                人机对战
+                </div>
+    
+            <div class="myroom" id="myroom">
+                自定义房间
+            </div>
+            <div class="myself" id="myself">
+               快速开始
+            </div>
+            </div>
+            
+        <div class="note" id="note">
+            </div>
+        <div class="bottom">
+            <div class = "allchat">
+
+            </div>
+        </div>
+        </div>
+
+    <div class="canvas" style="text-align: center;background-color:whitesmoke">
+        
+    </div>
+    </div>
+    <!-- <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js'%}"></script> -->
+    <script type="text/javascript" src="{% static 'js/index.js'%}"></script>    
+    {% endblock %}
+    
